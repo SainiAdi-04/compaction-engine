@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-all cli/main.ts",
+    "test": "deno test --allow-all tests/",
+    "compact": "deno run --allow-all cli/main.ts"
+  },
+  "imports": {},
+  "compilerOptions": {
+    "strict": true
+  }
+}
