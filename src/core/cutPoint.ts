@@ -5,22 +5,19 @@ export function findCutPoint(
   keepRecentTokens: number,
 ): cutPoint {
   if (messages.length === 0) {
-    return {
-      cutPointIndex: -1,
-      isSplitTurn: false,
-    };
+    return { cutPointIndex: -1, isSplitTurn: false };
   }
   let tCount = 0;
   let idx = messages.length - 1;
   let crossed = false;
 
   for (let i = messages.length - 1; i >= 0; i--) {
+    idx = i;
+    tCount += messages[i].tokenCount;
     if (tCount >= keepRecentTokens) {
       crossed = true;
       break;
     }
-    idx = i;
-    tCount += messages[i].tokenCount;
   }
 
   if (!crossed) {
@@ -36,4 +33,5 @@ export function findCutPoint(
     isSplitTurn: false,
   };
 }
+
 
