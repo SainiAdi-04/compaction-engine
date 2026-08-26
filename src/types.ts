@@ -15,6 +15,11 @@ export interface Message {
   toolCallId?: string;
 }
 
+export interface Usage {
+  inputTokens: number;
+  outputTokens: number;
+}
+
 export interface CompactionDetails {
   readFiles: string[];
   modifiedFiles: string[];
@@ -27,6 +32,7 @@ export interface CompactionEntry {
   firstKeptEntryId: string;
   tokensBefore: number;
   details: CompactionDetails;
+  usage?: Usage
 }
 
 export interface cutPoint {
@@ -36,8 +42,13 @@ export interface cutPoint {
 
 export type SessionEntry = Message | CompactionEntry;
 
-export interface Usage {
-  inputTokens: number;
-  outputTokens: number;
+export interface LLMResponse {
+  text: string;
+  usage: Usage;
 }
+
+export interface LLMProvider {
+  call(systemPrompt: string, userMessage: string): Promise<LLMResponse>;
+}
+
 
