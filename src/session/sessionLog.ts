@@ -8,7 +8,7 @@ export class SessionLog {
     }
 
     getAllEntries():SessionEntry[]{
-        return this.entries;
+        return [...this.entries];
     }
 
     getEntriesfromId(id:string):SessionEntry[]{
