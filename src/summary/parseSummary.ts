@@ -34,6 +34,6 @@ function extractTagContent(text: string, openTag: string, closeTag: string): str
 
 function cleanPaths(pathString: string): string[] {
     return pathString.split(/\r?\n/)
-        .map(line => line.trim())
+        .map(line => line.trim().replace(/^[-*•]\s+/, ""))
         .filter(line => line.length > 0);
 }
