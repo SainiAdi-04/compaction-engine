@@ -39,7 +39,11 @@ path/to/file1.ts
 
 <modified-files>
 path/to/changed.ts
-</modified-files>`;
+</modified-files>
+
+IMPORTANT: You must populate <read-files> and <modified-files> with the actual file paths mentioned anywhere in the conversation above — every file that was read goes in <read-files>, every file that was created or edited goes in <modified-files>. List one file path per line. Do not leave these empty if any files were read or modified in the conversation, even if you already mentioned them in the prose sections above.
+
+`;
 
   const previousSummaryBlock = previousSummary
     ? `Here is the summary of everything before this point:\n${previousSummary}\n\n`
