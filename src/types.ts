@@ -22,6 +22,7 @@ export interface CompactionDetails {
 
 export interface CompactionEntry {
   type: "compaction";
+  id: string,
   summary: string;
   firstKeptEntryId: string;
   tokensBefore: number;
@@ -39,5 +40,4 @@ export interface Usage {
   inputTokens: number;
   outputTokens: number;
 }
-
 
