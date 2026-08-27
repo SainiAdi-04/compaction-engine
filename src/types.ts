@@ -1,4 +1,3 @@
-// Message, SessionEntry, CompactionEntry, BranchSummaryEntry, etc.
 export type MessageRole =
   | "user"
   | "assistant"
@@ -33,6 +32,7 @@ export interface CompactionEntry {
   tokensBefore: number;
   details: CompactionDetails;
   usage?: Usage
+  isSplitTurn?: boolean;
 }
 
 export interface cutPoint {
